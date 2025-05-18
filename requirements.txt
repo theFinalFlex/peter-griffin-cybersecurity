@@ -1,0 +1,9 @@
+openai==1.12.0
+python-dotenv==1.0.0
+schedule==1.2.1
+requests==2.31.0
+beautifulsoup4==4.12.2
+yt-dlp==2024.3.10
+python-twitter-v2==0.8.1
+moviepy==1.0.3
+Pillow==10.2.0 
