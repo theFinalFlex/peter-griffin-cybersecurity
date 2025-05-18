@@ -1,40 +1,70 @@
-# Brainrot Pipeline
+# Peter Griffin Cybersecurity News Pipeline
 
-A modular pipeline that downloads the SANS Stormcast podcast, transcribes it, and converts it into Peter Griffin-style commentary.
+This project automates the creation of humorous cybersecurity news videos using Peter Griffin's voice and style. It processes the SANS Internet Storm Center's Stormcast podcast, segments it, and generates engaging video content.
 
 ## Setup
 
-1. Install dependencies:
+1. Clone the repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/peter-griffin-cybersecurity.git
+cd peter-griffin-cybersecurity
+```
+
+2. Create and activate a virtual environment:
+```bash
+python -m venv venv
+# On Windows:
+.\venv\Scripts\activate
+# On Unix/MacOS:
+source venv/bin/activate
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Create a `.env` file with your OpenAI API key:
+4. Create a `.env` file in the project root with the following variables:
 ```
 OPENAI_API_KEY=your_api_key_here
 ```
 
+5. Download required assets:
+```bash
+python download_assets.py
+```
+
 ## Usage
 
-Run the main pipeline:
+1. Download the latest podcast transcript:
 ```bash
-python main.py
+python download_transcript.py
 ```
 
-Or run individual components:
+2. Process the transcript into segments:
 ```bash
-python download_podcast.py
-python transcribe_audio.py
-python peterify.py
+python process_transcript.py
 ```
 
-## Components
+3. Generate videos from segments:
+```bash
+python generate_video.py
+```
 
-- `download_podcast.py`: Downloads today's SANS Stormcast podcast
-- `transcribe_audio.py`: Transcribes the MP3 using OpenAI's Whisper
-- `peterify.py`: Converts the transcript into Peter Griffin-style commentary
-- `main.py`: Orchestrates the entire pipeline
+## Project Structure
 
-## Output
+- `assets/`: Contains images and other static assets
+- `segments/`: Contains processed transcript segments
+- `transcripts/`: Contains downloaded podcast transcripts
+- `downloads/`: Temporary storage for downloaded files
 
-The final output will be saved as `peter_commentary.txt` in the project directory. 
+## Contributing
+
+1. Fork the repository
+2. Create a new branch for your feature
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details. 
